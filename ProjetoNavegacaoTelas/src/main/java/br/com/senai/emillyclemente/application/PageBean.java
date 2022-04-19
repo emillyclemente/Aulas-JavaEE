@@ -32,7 +32,5 @@ public class PageBean implements Serializable {
 		}else {
 			return null;
 		}
-
 	}
-
 }
