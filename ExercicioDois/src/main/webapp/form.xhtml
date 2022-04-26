@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+<h:head>
+ <link href="style.css" rel="stylesheet"/>
+	<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<title>Calcule</title>
+</h:head>
+<body>
+
+<h2>Insira 3 números para efetuar a soma</h2>
+
+	<h:form>
+		<p>Primeiro Número <h:inputText value="#{pageBean.n1}" /></p>
+		<p>Segundo Número <h:inputText value="#{pageBean.n2}" /></p>
+		<p>Terceiro Número <h:inputText value="#{pageBean.n3}" /></p>
+		<h:commandButton value= "Somar" action = "#{pageBean.processar}"/>
+		
+	</h:form>
+
+</body>
+</html>
