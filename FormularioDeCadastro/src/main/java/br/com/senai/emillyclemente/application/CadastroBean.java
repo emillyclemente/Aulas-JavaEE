@@ -15,7 +15,7 @@ public class CadastroBean implements Serializable {
 	private String email;
 	private String senha1;
 	private String senha2;
-	private Character sexo;
+	private String sexo;
 	private Boolean receberEmails;
 	private String observacoes;
 	private Integer[] linguagens;
@@ -48,10 +48,10 @@ public class CadastroBean implements Serializable {
 	public void setSenha2(String senha2) {
 		this.senha2 = senha2;
 	}
-	public Character getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(Character sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 	public Boolean getReceberEmails() {
@@ -73,6 +73,18 @@ public class CadastroBean implements Serializable {
 		this.linguagens = linguagens;
 	}
 	
+	public String getLinguagensAsString() {
+		String str="";
+		boolean first = true;
+		for(Integer linguagem : linguagens) {
+			if(!first) {
+				str +=",";
+			}
+			str += Linguagem.LINGUAGENS[linguagem].getNome();
+			first = false;
+		}
+		return str;
+	}
 	
 	
 

@@ -13,35 +13,34 @@
 	
 <body>
 	<h:form>
-		<h:painelGrid columns="2">
+		<h:panelGrid columns="2">
 			<f:facet name="header">
 				Cadastro de Usuário
 			</f:facet>
 			Nome:
-			<h:inputText value = "#{Cadastro.nome}"></h:inputText>
+			<h:inputText value = "#{cadastro.nome}"></h:inputText>
 			E-mail:
-			<h:inputText value = "#{Cadastro.email}"></h:inputText>
+			<h:inputText value = "#{cadastro.email}"></h:inputText>
 			Senha:
-			<h:inputText value = "#{Cadastro.senha1}"></h:inputText>
+			<h:inputText value = "#{cadastro.senha1}"></h:inputText>
 			Confirmação de Senha:
-			<h:inputText value = "#{Cadastro.senha2}"></h:inputText>
+			<h:inputText value = "#{cadastro.senha2}"></h:inputText>
 			Sexo:
-			<h:selectOneRadio>
-				<f:selectItem itemValue="F" itemLabel="Feminino"></f:selectItem>
-				<f:selectItem itemValue="M" itemLabel="Masculino"></f:selectItem>
+			<h:selectOneRadio value = "#{cadastro.sexo}">
+				<f:selectItem itemValue='F' itemLabel="Feminino"></f:selectItem>
+				<f:selectItem itemValue='M' itemLabel="Masculino"></f:selectItem>
 			</h:selectOneRadio>
 			Deseja receber E-mail?
 			<h:selectBooleanCheckbox value = "#{cadastro.receberEmails}"></h:selectBooleanCheckbox>
 			Observações
 			<h:inputTextarea value = "#{cadastro.observacoes}" rows="4" cols="30"></h:inputTextarea>
-			
 			Linguagens de Programação:
 			<h:selectManyCheckbox value = "#{cadastro.linguagens}">
 			
 				<f:selectItems value="#{cadastro.listaLinguagens}" var="l" itemValue="#{l.id}" itemLabel="#{l.nome}"></f:selectItems>
 			
 			</h:selectManyCheckbox>
-		</h:painelGrid>
+		</h:panelGrid>
 		
 		<h:commandButton value = "Cadastrar" action="info"></h:commandButton>
 	</h:form>
