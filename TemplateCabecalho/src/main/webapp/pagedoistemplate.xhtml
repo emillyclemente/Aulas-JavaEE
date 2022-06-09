@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+	
+<ui:composition template="/template.xhtml">
+	<ui:param name="titulo" value="Lista de Compras"/>  <!-- É o parâmetro de valor -->
+	<ui:define name="conteudo">  <!-- Ele define o conteudo, substituindo pelo o que está dentro da tag -->
+		Lista de Livros:
+				<ul>
+					<li>Física Quântica</li>
+					<li>Obras Revolucionárias</li>
+					<li>Mártires</li>
+					<li>Bórgias</li>
+				</ul>
+	</ui:define>
+
+
+
+</ui:composition>	
+	
+</html>
