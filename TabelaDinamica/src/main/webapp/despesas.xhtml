@@ -24,20 +24,20 @@
 			
 			<h:column>
 				<f:facet name="header">ID </f:facet>
-				#{tabela.despesa.rowIndex + 1} 												<!-- acesso ao bean sem aspas pois o jsf apenas substitui a informação -->
+				#{tabela.despesa.rowIndex + 1} 		<!-- Acesso ao bean sem aspas pois o jsf apenas substitui a informaÃ§Ã£o, pela informaÃ§Ã£o desejada -->
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header"> Data</f:facet>
 				
-				<h:outputText value="#{d.data}" rendered="#{!d.edit}">						<!-- preemchimento, !barramento -->
-					<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>            <!-- padronização --> <!-- rendered com a mesma funçaõ do if -->
+				<h:outputText value="#{d.data}" rendered="#{!d.edit}">	<!-- Preemchimento, o simbolo de exclamaÃ§Ã£o "!" significa barramento -->
+					<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>   <!-- Convertendo a data para o padrÃ£o desejado --> <!-- rendered com a mesma funÃ§aÃµ do if -->
 				</h:outputText>			
 				<h:inputText value="#{d.data}" rendered="#{d.edit}"></h:inputText>		
 				</h:column>
 				
 				<h:column>
-					<f:facet name="header">Descrição</f:facet>
+					<f:facet name="header">DescriÃ§Ã£o</f:facet>
 					<h:outputText value="#{d.descricao}" rendered="#{!d.edit}"></h:outputText>
 					<h:inputText value="#{d.descricao}" rendered="#{d.edit}"></h:inputText>	
 				</h:column>											
@@ -45,14 +45,14 @@
 				<h:column>
 					<f:facet name="header">Valor</f:facet>
 					<h:outputText value="#{d.descricao}" rendered="#{!d.edit}">
-						<f:convertNumber type="currency" locale="pt_BR"></f:convertNumber>	<!-- conversão de moeda -->
+						<f:convertNumber type="currency" locale="pt_BR"></f:convertNumber>	<!-- ConversÃ£o para a moeda brasileira -->
 					</h:outputText>
 					<h:inputText value="#{d.descricao}" rendered="#{d.edit}"></h:inputText>
 				</h:column>
 				
 				<h:column>
-					<f:facet name="header">Operações</f:facet>
-					<h:panelGroup rendered="#{!d.edit}"> 									<!-- junção -->
+					<f:facet name="header">OperaÃ§Ãµes</f:facet>
+					<h:panelGroup rendered="#{!d.edit}"> 									<!-- JunÃ§Ã£o -->
 						<h:commandLink value="Alterar" action="#{tabela.editar(d)}"></h:commandLink> 
 						<h:commandLink value="Excluir" action="#{tabela.excluir(d)}"></h:commandLink>
 					</h:panelGroup> 
@@ -61,7 +61,7 @@
 					
 		</h:dataTable>
 		<br/>
-		<h:commandButton value="Inserir" action="#{tabela.inserir}"></h:commandButton>
+		<h:commandButton value="Inserir" action="#{tabela.inserir}"></h:commandButton> <!-- BotÃ£o para inserir as informaÃ§Ãµes -->
 	</h:form>
 
 </body>
