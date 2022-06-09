@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+<h:head>
+	<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<title>Gerador</title>
+</h:head>
+	
+<body>
+	<h:form POST="">
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				Gerador de Números Aleatórios
+			</f:facet>
+			
+			Quantidade de números:
+			
+			<h:selectOneMenu value="#{formulario.number}"> <!-- Menu que chama a lista, no qual vão ser escolhidos a quantidade de números que devem ser gerados -->
+				<f:selectItem itemValue = "1" itemLabel = "1"></f:selectItem>
+				<f:selectItem itemValue = "2" itemLabel = "2"></f:selectItem>
+				<f:selectItem itemValue = "3" itemLabel = "3"></f:selectItem>
+				<f:selectItem itemValue = "4" itemLabel = "4"></f:selectItem>
+				<f:selectItem itemValue = "5" itemLabel = "5"></f:selectItem>
+			</h:selectOneMenu>
+			
+			Valor mínimo:
+			<h:inputText value = "#{formulario.minimo}"></h:inputText> <!-- Sera inserido o valor minimo dos numeros -->
+			
+			Valor máximo:
+			<h:inputText value = "#{formulario.maximo}"></h:inputText> <!-- Sera inserido o valor maximo dos numeros -->
+			
+		</h:panelGrid>
+		
+		<h:commandButton value = "Gerar" action="#{formulario.gerar}" ></h:commandButton> <!-- Chama o método do bean que gera os numeros -->
+		
+		<h:selectManyListbox rendered="#{formulario.numeros.size() > 0}" style="width: 140px;" readonly="true">
+			<f:selectItems value="#{formulario.numeros}" var="n" itemLabel="#{n}" /> <!-- Mostra os números que foram gerados, puxando do bean e da variavel n -->
+		</h:selectManyListbox>
+	</h:form>
+</body>	
+	
+</html>
