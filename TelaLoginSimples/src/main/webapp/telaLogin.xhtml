@@ -15,11 +15,11 @@
 	<h:form>
 		<h:panelGrid columns="2">
 		Nome:
-		<h:inputText value="#{loginBean.nome}"></h:inputText>
+		<h:inputText value="#{loginBean.nome}"></h:inputText> <!-- Chamando  a variavÃ©l nome do Bean -->
 		Senha:
-		<h:inputSecret value="#{loginBean.senha}"></h:inputSecret>	
+		<h:inputSecret value="#{loginBean.senha}"></h:inputSecret> 	<!-- Chamando a variavel login do Bean -->
 		</h:panelGrid>
-		<h:commandButton id="login" value="login" action="#{loginBean.doLogin}"></h:commandButton> <!-- id é como o botão vai ser chamado, actio é a ação que o botão vai executar -->
+		<h:commandButton id="login" value="login" action="#{loginBean.doLogin}"></h:commandButton> <!-- ID Ã© como o botÃ£o serÃ¡ chamado, action Ã© a aÃ§Ã£o que o botÃ£o vai executar -->
 	</h:form>
 </body>
 </html>
