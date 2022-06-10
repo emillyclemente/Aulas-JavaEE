@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	lang="pt-br">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<title>Cadastro de Dados</title>
+</h:head>
+<body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				Áreas de Interesse
+			</f:facet>
+			
+			<h:selectManyCheckbox value="#{cadastro.pessoa.interesses}" layout="pageDirection"> <!-- Selecionar as areas de interesse dentro do checkbox, puxando do bean e da constante interesses -->
+				<f:selectItems value="#{cadastro.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"></f:selectItems>
+			</h:selectManyCheckbox>
+			
+		</h:panelGrid>
+		
+		<h:commandButton value="Anterior" action="inserir_2" /> <!-- Para ir para a página anterior -->
+		<h:commandButton value="Finalizar" action="detalhes" /> <!-- Para ir para a página posterior -->
+	</h:form>
+</body>
+</html>
